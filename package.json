@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
+    "start": "concurrently 'npm:watch-bundle' 'npm:serve-11ty'",
+    "build": "npm run build-bundle -s && npm run build-11ty -s",
+    "watch-bundle": "parcel watch src/app/index.js -d src/dist",
+    "build-bundle": "parcel build src/app/index.js -d src/dist",
+    "serve-11ty": "eleventy --serve",
+    "build-11ty": "eleventy",
     "predeploy": "cross-env ELEVENTY_ENV=production npm run build -s",
     "deploy": "touch public/.nojekyll && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +19,13 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.5"
+  },
+  "dependencies": {
+    "d3": "^6.3.1"
   }
 }

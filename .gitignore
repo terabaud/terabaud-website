@@ -5,3 +5,5 @@ Thumbs.db
 npm-debug.*
 
 public
+.cache
+src/dist

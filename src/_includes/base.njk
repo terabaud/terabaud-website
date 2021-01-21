@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ description }}">
     <meta name="author" content="{{ author }}">
-    <link rel="stylesheet" href="{{ site.url }}/css/styles.css">
+    <link rel="stylesheet" href="{{ site.url }}/dist/index.css">
     <title>{{ title }}</title>
   </head>
   <body>
@@ -15,5 +15,6 @@
         {{content | safe }}
       {% endblock %}
     </main>
+    <script src="{{ site.url }}/dist/index.js"></script>
   </body>
 </html>
