@@ -1,6 +1,5 @@
 ---
 title: terabaud.de
-templateEngineOverride: njk,md
 ---
 
 # Hello World
